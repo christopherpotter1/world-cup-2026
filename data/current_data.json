@@ -4,7 +4,7 @@
     {
       "id": 1,
       "time": "2026-06-12T18:00:00Z",
-      "status": "UPCOMING",
+      "status": "FINISHED",
       "venue": "MetLife Stadium",
       "team1": {
         "name": "USA",
@@ -17,48 +17,118 @@
         "group": "A"
       },
       "score": {
-        "team1": 0,
-        "team2": 0
+        "team1": 2,
+        "team2": 1
       },
       "stats": {
         "possession": {
-          "team1": 45,
-          "team2": 55
+          "team1": 58,
+          "team2": 42
         },
         "shots": {
-          "team1": 8,
-          "team2": 12
+          "team1": 12,
+          "team2": 9
+        },
+        "shotsOnTarget": {
+          "team1": 7,
+          "team2": 5
         },
         "xG": {
-          "team1": 1.2,
-          "team2": 1.8
+          "team1": 2.1,
+          "team2": 1.4
+        },
+        "passes": {
+          "team1": 487,
+          "team2": 362
+        },
+        "tackles": {
+          "team1": 18,
+          "team2": 22
+        },
+        "fouls": {
+          "team1": 12,
+          "team2": 14
         }
       },
       "predictions": [
         {
           "score": "2-1 USA",
-          "prob": "35%",
-          "odds": "3.20"
+          "prob": "42%",
+          "odds": "3.10"
         },
         {
           "score": "1-1 Draw",
-          "prob": "28%",
-          "odds": "3.75"
+          "prob": "26%",
+          "odds": "3.80"
         },
         {
           "score": "0-2 Mexico",
-          "prob": "18%",
+          "prob": "16%",
           "odds": "4.50"
         }
       ],
       "analysis": {
-        "prediction": "USA expected to control midfield with their physical presence. Mexico's counter-attacking threat remains significant. Home advantage crucial factor."
-      }
+        "prediction": "USA dominated through aggressive pressing and direct play. Mexico's counter-attacks were limited by USA's defensive organization."
+      },
+      "analysis13part": [
+        {
+          "category": "1. Recent Form",
+          "insight": "USA entering tournament on strong form with 3 wins in last 5 qualifiers. Mexico struggling with inconsistency, 2 wins in last 5."
+        },
+        {
+          "category": "2. Head-to-Head",
+          "insight": "Last 5 meetings: USA 2 wins, Mexico 1 win, 2 draws. USA won 3-1 in Gold Cup 2021. Slight USA advantage."
+        },
+        {
+          "category": "3. Key Players",
+          "insight": "USA: Pulisic (form), Reyna (creativity). Mexico: Lozano (pace), Herrera (midfield control). Both strong in their respective areas."
+        },
+        {
+          "category": "4. Tactical Setup",
+          "insight": "USA playing 4-3-3 with high press. Mexico 4-2-3-1 focusing on defensive shape and quick transitions. USA's formation more aggressive."
+        },
+        {
+          "category": "5. Injuries/Suspensions",
+          "insight": "USA: Minor hamstring concern on Ream (cleared to play). Mexico: No major absentees. Both teams at full strength."
+        },
+        {
+          "category": "6. Home/Away Record",
+          "insight": "USA strong at home (12W-3D-2L in last 17). Mexico away record mixed (8W-4D-5L). Advantage to USA playing at MetLife."
+        },
+        {
+          "category": "7. Possession Style",
+          "insight": "USA prefers ball control with 52% avg possession. Mexico more transition-focused, 48% avg. USA should dictate tempo."
+        },
+        {
+          "category": "8. Shooting/Finishing",
+          "insight": "USA conversion rate 18% in qualifying. Mexico 16%. Both efficient. Expect 2-3 total goals in open play."
+        },
+        {
+          "category": "9. Defensive Strength",
+          "insight": "USA conceded 0.8 goals/game in qualifying. Mexico 1.2 goals/game. USA defense more organized and compact."
+        },
+        {
+          "category": "10. Set Piece Threat",
+          "insight": "USA scored 4 set piece goals in qualifying. Mexico 2. USA has clear advantage from corners and free kicks."
+        },
+        {
+          "category": "11. Player Matchups",
+          "insight": "Pulisic vs Mexico defense critical. Herrera vs USA midfield battle. Pulisic's pace likely to trouble Mexican fullbacks."
+        },
+        {
+          "category": "12. Environmental Factors",
+          "insight": "MetLife Stadium: 82,500 capacity, humid conditions (73°F), partisan crowd favoring USA. Temperature ideal for athletic teams."
+        },
+        {
+          "category": "13. Historical Context",
+          "insight": "USA improved significantly since 2022 World Cup. Mexico unchanged leadership. Generational shift favors USA entering 2026."
+        }
+      ]
     },
     {
       "id": 2,
       "time": "2026-06-12T21:00:00Z",
-      "status": "UPCOMING",
+      "status": "FINISHED",
       "venue": "Estadio Azteca",
       "team1": {
         "name": "Argentina",
@@ -71,48 +141,118 @@
         "group": "A"
       },
       "score": {
-        "team1": 0,
+        "team1": 3,
         "team2": 0
       },
       "stats": {
         "possession": {
-          "team1": 58,
-          "team2": 42
+          "team1": 64,
+          "team2": 36
         },
         "shots": {
-          "team1": 10,
-          "team2": 6
+          "team1": 14,
+          "team2": 5
+        },
+        "shotsOnTarget": {
+          "team1": 9,
+          "team2": 1
         },
         "xG": {
-          "team1": 1.5,
-          "team2": 0.9
+          "team1": 2.8,
+          "team2": 0.6
+        },
+        "passes": {
+          "team1": 521,
+          "team2": 318
+        },
+        "tackles": {
+          "team1": 12,
+          "team2": 19
+        },
+        "fouls": {
+          "team1": 10,
+          "team2": 16
         }
       },
       "predictions": [
         {
-          "score": "2-0 Argentina",
-          "prob": "42%",
-          "odds": "2.90"
+          "score": "3-0 Argentina",
+          "prob": "38%",
+          "odds": "2.95"
         },
         {
-          "score": "1-0 Argentina",
+          "score": "2-0 Argentina",
           "prob": "32%",
           "odds": "3.40"
         },
         {
-          "score": "1-1 Draw",
-          "prob": "15%",
+          "score": "1-0 Argentina",
+          "prob": "18%",
           "odds": "4.20"
         }
       ],
       "analysis": {
-        "prediction": "Argentina favored with experienced squad. Messi's presence elevates team dynamics. Chile's defense will need disciplined approach."
-      }
+        "prediction": "Argentina's dominance was complete. Superior technical ability and experience showed through. Chile unable to create meaningful chances."
+      },
+      "analysis13part": [
+        {
+          "category": "1. Recent Form",
+          "insight": "Argentina unbeaten in 35 matches entering tournament. Chile rebuilding phase with mixed results (1W-2D-2L last 5)."
+        },
+        {
+          "category": "2. Head-to-Head",
+          "insight": "Argentina leads series 16-8-5. Last 3 meetings all Argentina wins. Massive psychological advantage for Argentina."
+        },
+        {
+          "category": "3. Key Players",
+          "insight": "Argentina: Messi (leadership/creativity), Martínez (defense). Chile: Vidal (experience), Brereton Díaz (pace). Significant talent gap."
+        },
+        {
+          "category": "4. Tactical Setup",
+          "insight": "Argentina 4-2-3-1 with Messi in attacking midfield. Chile 4-3-3 defensive. Argentina's flexibility superior."
+        },
+        {
+          "category": "5. Injuries/Suspensions",
+          "insight": "Argentina: De Paul recovering but fit. Chile: Pulgar suspended after yellow cards. Weakens Chile's midfield."
+        },
+        {
+          "category": "6. Home/Away Record",
+          "insight": "Argentina strong everywhere (10W-2D-1L away in qualifiers). Chile weak away (4W-2D-7L). Playing in Mexico helps Argentina atmosphere-wise."
+        },
+        {
+          "category": "7. Possession Style",
+          "insight": "Argentina 58% avg possession with intricate passing. Chile 45% defensive possession. Argentina should control game."
+        },
+        {
+          "category": "8. Shooting/Finishing",
+          "insight": "Argentina 21% conversion rate. Chile 14%. Clear technical superiority in finishing. Expect Argentina to punish chances."
+        },
+        {
+          "category": "9. Defensive Strength",
+          "insight": "Argentina conceded only 0.5 goals/game in qualifying. Chile 1.4 goals/game. Defensive gap significant."
+        },
+        {
+          "category": "10. Set Piece Threat",
+          "insight": "Argentina dangerous from set pieces (5 goals in qualifying). Chile poor defending them (6 conceded). Messi free kicks threat."
+        },
+        {
+          "category": "11. Player Matchups",
+          "insight": "Messi vs Chile defense matchup one-sided. Vidal vs Argentina midfield likely overwhelmed. Argentina's technical players dominate."
+        },
+        {
+          "category": "12. Environmental Factors",
+          "insight": "Azteca Stadium 87,000 capacity, high altitude (7,382 ft). Argentina more accustomed to altitude. Works in their favor."
+        },
+        {
+          "category": "13. Historical Context",
+          "insight": "Argentina defending Copa América champions. Chile's 2015-2016 Copa success faded. Argentina dominance expected to continue."
+        }
+      ]
     },
     {
       "id": 3,
       "time": "2026-06-13T18:00:00Z",
-      "status": "UPCOMING",
+      "status": "FINISHED",
       "venue": "Levi's Stadium",
       "team1": {
         "name": "France",
@@ -125,8 +265,8 @@
         "group": "B"
       },
       "score": {
-        "team1": 0,
-        "team2": 0
+        "team1": 2,
+        "team2": 2
       },
       "stats": {
         "possession": {
@@ -134,34 +274,104 @@
           "team2": 48
         },
         "shots": {
-          "team1": 9,
-          "team2": 8
+          "team1": 11,
+          "team2": 10
+        },
+        "shotsOnTarget": {
+          "team1": 6,
+          "team2": 6
         },
         "xG": {
-          "team1": 1.4,
-          "team2": 1.3
+          "team1": 1.9,
+          "team2": 1.8
+        },
+        "passes": {
+          "team1": 478,
+          "team2": 461
+        },
+        "tackles": {
+          "team1": 16,
+          "team2": 17
+        },
+        "fouls": {
+          "team1": 13,
+          "team2": 12
         }
       },
       "predictions": [
         {
-          "score": "2-1 France",
-          "prob": "38%",
-          "odds": "3.10"
+          "score": "2-2 Draw",
+          "prob": "28%",
+          "odds": "3.75"
         },
         {
-          "score": "1-1 Draw",
+          "score": "2-1 France",
           "prob": "26%",
-          "odds": "3.80"
+          "odds": "3.50"
         },
         {
           "score": "1-2 Netherlands",
-          "prob": "22%",
-          "odds": "3.95"
+          "prob": "24%",
+          "odds": "3.90"
         }
       ],
       "analysis": {
-        "prediction": "Classic European matchup. Both teams possess technical quality. Tactical discipline will determine outcome. Midfield battle crucial."
-      }
+        "prediction": "Thrilling encounter between two attacking-minded teams. Both teams created chances, defensive gaps exposed. Fair result."
+      },
+      "analysis13part": [
+        {
+          "category": "1. Recent Form",
+          "insight": "France unbeaten in 12 matches. Netherlands strong (3W-1D in last 5). Both teams in positive trajectory entering tournament."
+        },
+        {
+          "category": "2. Head-to-Head",
+          "insight": "France leads 8-6-3 in recent meetings. Last 3: 1 France win, 1 draw, 1 Netherlands win. Competitive series."
+        },
+        {
+          "category": "3. Key Players",
+          "insight": "France: Mbappé (blistering pace), Griezmann (intelligence). Netherlands: Van Dijk (defense), Frenkie de Jong (midfield). Both balanced teams."
+        },
+        {
+          "category": "4. Tactical Setup",
+          "insight": "France 4-2-3-1 with attacking width. Netherlands 4-3-3 possession-based. Different philosophies, both effective."
+        },
+        {
+          "category": "5. Injuries/Suspensions",
+          "insight": "France: Benzema age concerns (36). Netherlands: Blind past his peak. Both managing aging squads well."
+        },
+        {
+          "category": "6. Home/Away Record",
+          "insight": "France strong at home (10W-2D-1L). Netherlands consistent (7W-3D-3L away). Playing in USA neutralizes home advantage."
+        },
+        {
+          "category": "7. Possession Style",
+          "insight": "France prefers controlled possession (54% avg). Netherlands similar (51% avg). Evenly matched in possession metrics."
+        },
+        {
+          "category": "8. Shooting/Finishing",
+          "insight": "France 19% conversion. Netherlands 17%. Both efficient. Expected 2-4 goals in competitive match."
+        },
+        {
+          "category": "9. Defensive Strength",
+          "insight": "France concedes 0.9 goals/game. Netherlands 1.0 goals/game. Relatively balanced defensive records."
+        },
+        {
+          "category": "10. Set Piece Threat",
+          "insight": "France dangerous from set pieces (6 goals in qualifying). Netherlands also proficient (4 goals). Both threats from dead balls."
+        },
+        {
+          "category": "11. Player Matchups",
+          "insight": "Mbappé vs Van Dijk central to match. De Jong vs Kanté midfield battle. Multiple tactical subplots."
+        },
+        {
+          "category": "12. Environmental Factors",
+          "insight": "Levi's Stadium 68,500 capacity, cool evening (62°F), neutral venue. Favors team with better game management."
+        },
+        {
+          "category": "13. Historical Context",
+          "insight": "France defending World Cup champions (2018). Netherlands seeking redemption after 2022 early exit. Both with point to prove."
+        }
+      ]
     },
     {
       "id": 4,
@@ -188,56 +398,126 @@
           "team2": 45
         },
         "shots": {
-          "team1": 11,
+          "team1": 10,
           "team2": 7
+        },
+        "shotsOnTarget": {
+          "team1": 6,
+          "team2": 4
         },
         "xG": {
           "team1": 1.6,
           "team2": 1.1
+        },
+        "passes": {
+          "team1": 512,
+          "team2": 389
+        },
+        "tackles": {
+          "team1": 14,
+          "team2": 18
+        },
+        "fouls": {
+          "team1": 11,
+          "team2": 13
         }
       },
       "predictions": [
         {
           "score": "2-0 Germany",
-          "prob": "40%",
-          "odds": "3.00"
+          "prob": "38%",
+          "odds": "3.10"
         },
         {
           "score": "1-0 Germany",
-          "prob": "30%",
-          "odds": "3.50"
+          "prob": "28%",
+          "odds": "3.60"
         },
         {
           "score": "1-1 Draw",
-          "prob": "18%",
-          "odds": "4.10"
+          "prob": "22%",
+          "odds": "3.95"
         }
       ],
       "analysis": {
-        "prediction": "Germany's organization and depth advantage. Italy's defensive solidity tested. Historical rivalry adds intensity. Expect competitive, tactical match."
-      }
+        "prediction": "Germany expected to control midfield and exploit Italy's defensive vulnerabilities. Close contest in first half, Germany to dominate second half."
+      },
+      "analysis13part": [
+        {
+          "category": "1. Recent Form",
+          "insight": "Germany strong (3W-1D in last 5). Italy inconsistent (2W-1D-2L in last 5). Germany heading into tournament with better momentum."
+        },
+        {
+          "category": "2. Head-to-Head",
+          "insight": "Germany leads 9-5-3 all-time. Last encounter: 1-1 Euro 2016. Historical advantage to Germany in knockout tournaments."
+        },
+        {
+          "category": "3. Key Players",
+          "insight": "Germany: Müller (experience), Havertz (youth energy). Italy: Verratti (class), Immobile (finishing). Generational shift favors Germany."
+        },
+        {
+          "category": "4. Tactical Setup",
+          "insight": "Germany 4-2-3-1 attacking. Italy 4-3-3 defensive. Germany more ambitious, Italy pragmatic."
+        },
+        {
+          "category": "5. Injuries/Suspensions",
+          "insight": "Germany: Sané return questionable. Italy: Florenzi doubtful. Both have minor absences but manageable."
+        },
+        {
+          "category": "6. Home/Away Record",
+          "insight": "Germany strong home record (11W-2D-0L). Italy weak away (6W-2D-5L). USA venue helps Germany psychologically."
+        },
+        {
+          "category": "7. Possession Style",
+          "insight": "Germany 56% avg possession, technical football. Italy 44% possession, defensive solidity. Germany should control tempo."
+        },
+        {
+          "category": "8. Shooting/Finishing",
+          "insight": "Germany 20% conversion. Italy 15%. Germany more efficient in front of goal. Expect Germany to convert chances."
+        },
+        {
+          "category": "9. Defensive Strength",
+          "insight": "Germany concedes 0.7 goals/game. Italy 1.0 goals/game. Germany significantly stronger defensively."
+        },
+        {
+          "category": "10. Set Piece Threat",
+          "insight": "Germany scored 5 set piece goals in qualifying. Italy 3. Germany advantage from dead balls and aerial duels."
+        },
+        {
+          "category": "11. Player Matchups",
+          "insight": "Havertz vs Italian defense key. Müller vs Verratti tactical battle. Germany's attacking depth superior overall."
+        },
+        {
+          "category": "12. Environmental Factors",
+          "insight": "Mercedes-Benz Stadium 71,000 capacity, comfortable temperature (68°F), neutral ground. Suits Germany's technical play."
+        },
+        {
+          "category": "13. Historical Context",
+          "insight": "Germany seeking return to World Cup glory (last win 2014). Italy rebuilding after Euro 2020 success. Different trajectory paths."
+        }
+      ]
     }
   ],
   "leaderboard": {
     "scorers": [
-      { "rank": 1, "player": "Kylian Mbappé", "team": "France", "goals": 0 },
-      { "rank": 2, "player": "Sergio Lewandowski", "team": "Poland", "goals": 0 },
-      { "rank": 3, "player": "Harry Kane", "team": "England", "goals": 0 },
-      { "rank": 4, "player": "Neymar Jr", "team": "Brazil", "goals": 0 },
-      { "rank": 5, "player": "Cristiano Ronaldo", "team": "Portugal", "goals": 0 }
+      { "rank": 1, "player": "Kylian Mbappé", "team": "France", "goals": 1 },
+      { "rank": 2, "player": "Lionel Messi", "team": "Argentina", "goals": 1 },
+      { "rank": 3, "player": "Sergio Lewandowski", "team": "Poland", "goals": 0 },
+      { "rank": 4, "player": "Harry Kane", "team": "England", "goals": 0 },
+      { "rank": 5, "player": "Neymar Jr", "team": "Brazil", "goals": 0 }
     ],
     "assists": [
-      { "rank": 1, "player": "Lionel Messi", "team": "Argentina", "assists": 0 },
-      { "rank": 2, "player": "Antoine Griezmann", "team": "France", "assists": 0 },
+      { "rank": 1, "player": "Jesús Corona", "team": "Mexico", "assists": 0 },
+      { "rank": 2, "player": "Antoine Griezmann", "team": "France", "assists": 1 },
       { "rank": 3, "player": "Kevin De Bruyne", "team": "Belgium", "assists": 0 },
-      { "rank": 4, "player": "Angel Di Maria", "team": "Argentina", "assists": 0 },
+      { "rank": 4, "player": "Angel Di Maria", "team": "Argentina", "assists": 1 },
       { "rank": 5, "player": "Vinicius Jr", "team": "Brazil", "assists": 0 }
     ],
     "cards": [
       { "rank": 1, "player": "Sergio Ramos", "team": "Spain", "yellow": 0, "red": 0 },
       { "rank": 2, "player": "Pepe", "team": "Portugal", "yellow": 0, "red": 0 },
-      { "rank": 3, "player": "Gerard Piqué", "team": "Spain", "yellow": 0, "red": 0 },
-      { "rank": 4, "player": "Virgil van Dijk", "team": "Netherlands", "yellow": 0, "red": 0 },
+      { "rank": 3, "player": "Gerard Piqué", "team": "Spain", "yellow": 1, "red": 0 },
+      { "rank": 4, "player": "Virgil van Dijk", "team": "Netherlands", "yellow": 1, "red": 0 },
       { "rank": 5, "player": "Luke Shaw", "team": "England", "yellow": 0, "red": 0 }
     ]
   },
@@ -246,18 +526,18 @@
       {
         "name": "Group A",
         "teams": [
-          { "name": "Argentina", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
-          { "name": "USA", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
-          { "name": "Mexico", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
-          { "name": "Chile", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 }
+          { "name": "Argentina", "played": 1, "wins": 1, "draws": 0, "losses": 0, "points": 3 },
+          { "name": "USA", "played": 1, "wins": 1, "draws": 0, "losses": 0, "points": 3 },
+          { "name": "Mexico", "played": 1, "wins": 0, "draws": 0, "losses": 1, "points": 0 },
+          { "name": "Chile", "played": 1, "wins": 0, "draws": 0, "losses": 1, "points": 0 }
         ]
       },
       {
         "name": "Group B",
         "teams": [
-          { "name": "France", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "France", "played": 1, "wins": 0, "draws": 1, "losses": 0, "points": 1 },
+          { "name": "Netherlands", "played": 1, "wins": 0, "draws": 1, "losses": 0, "points": 1 },
           { "name": "Germany", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
-          { "name": "Netherlands", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
           { "name": "Italy", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 }
         ]
       },
