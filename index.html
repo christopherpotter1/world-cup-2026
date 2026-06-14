@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Cup 2026 Pro | Live Dashboard</title>
+    <title>World Cup 2026 Pro | Live Dashboard & Analysis</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -38,7 +38,7 @@
             backdrop-filter: blur(10px);
         }
         .header-container {
-            max-width: 1600px;
+            max-width: 1800px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -74,7 +74,7 @@
         .nav-btn:hover { background: var(--accent); color: var(--primary); }
         .nav-btn.active { background: var(--accent); color: var(--primary); }
         .container {
-            max-width: 1600px;
+            max-width: 1800px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -82,7 +82,7 @@
         .section.active { display: block; }
         .matches-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 15px;
             margin-bottom: 30px;
         }
@@ -97,6 +97,7 @@
         .match-card:hover {
             border-color: var(--accent);
             background: rgba(6, 182, 212, 0.1);
+            transform: translateY(-2px);
         }
         .match-card.active {
             border-color: var(--accent);
@@ -112,16 +113,16 @@
             margin: 10px 0;
         }
         .team-info { text-align: center; }
-        .team-flag { font-size: 2em; margin-bottom: 4px; }
-        .team-name { font-size: 0.9em; font-weight: 600; }
+        .team-flag { font-size: 2.5em; margin-bottom: 4px; }
+        .team-name { font-size: 0.95em; font-weight: 600; }
         .match-score {
             text-align: center;
-            padding: 10px;
+            padding: 12px;
             background: rgba(6, 182, 212, 0.1);
             border-radius: 8px;
             border: 1px solid var(--accent);
         }
-        .score-value { font-size: 1.5em; font-weight: 700; color: var(--accent); }
+        .score-value { font-size: 1.8em; font-weight: 700; color: var(--accent); }
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -130,10 +131,198 @@
             margin-bottom: 20px;
         }
         .card-title {
-            font-size: 1.3em;
+            font-size: 1.4em;
             font-weight: 700;
             color: var(--accent);
             margin-bottom: 15px;
+        }
+        .tabs-content {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        .tab-btn {
+            padding: 10px 15px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .tab-btn:hover { color: var(--accent); }
+        .tab-btn.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+        .lineup-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .team-lineup {
+            background: rgba(6, 182, 212, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px;
+        }
+        .lineup-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        .player-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .player-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 10px;
+            display: grid;
+            grid-template-columns: 40px 1fr;
+            gap: 10px;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .player-card:hover {
+            background: rgba(6, 182, 212, 0.1);
+            border-color: var(--accent);
+        }
+        .player-number {
+            background: var(--accent);
+            color: var(--primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9em;
+        }
+        .player-info {
+            flex: 1;
+        }
+        .player-name {
+            font-weight: 600;
+            font-size: 0.95em;
+            color: var(--text-light);
+        }
+        .player-position {
+            font-size: 0.75em;
+            color: var(--text-muted);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+        .stat-box {
+            background: rgba(6, 182, 212, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+        .stat-value { font-size: 1.8em; font-weight: 700; color: var(--accent); }
+        .stat-label { font-size: 0.8em; color: var(--text-muted); margin-top: 4px; }
+        .stat-bar {
+            background: rgba(52, 65, 85, 0.5);
+            border-radius: 4px;
+            height: 6px;
+            margin: 8px 0;
+            overflow: hidden;
+        }
+        .stat-fill {
+            background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+            height: 100%;
+            border-radius: 4px;
+        }
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .analysis-box {
+            background: rgba(6, 182, 212, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px;
+        }
+        .analysis-label {
+            font-size: 0.8em;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .analysis-content {
+            font-size: 0.9em;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        .prediction-box {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid var(--accent-alt);
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+            text-align: center;
+        }
+        .prediction-score {
+            font-weight: 700;
+            color: var(--accent-alt);
+            font-size: 1.1em;
+        }
+        .prediction-odds {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        .social-feed {
+            background: rgba(6, 182, 212, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .social-post {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        .social-header {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+        }
+        .social-author {
+            font-weight: 600;
+            color: var(--accent);
+        }
+        .social-timestamp {
+            color: var(--text-muted);
+        }
+        .social-content {
+            font-size: 0.95em;
+            line-height: 1.5;
+            color: var(--text-light);
         }
         .leaderboard-table {
             width: 100%;
@@ -154,7 +343,7 @@
         .leaderboard-table tr:hover { background: rgba(6, 182, 212, 0.05); }
         .standings-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 20px;
         }
         .group-table {
@@ -184,7 +373,7 @@
         .team-points { text-align: center; font-weight: 700; color: var(--accent); }
         .bracket-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
@@ -200,41 +389,31 @@
             color: var(--accent);
             margin-bottom: 12px;
         }
-        .analysis-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-        .analysis-box {
+        .bracket-match {
             background: rgba(6, 182, 212, 0.05);
             border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 15px;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 0.85em;
         }
-        .analysis-label {
-            font-size: 0.8em;
+        .loading {
+            text-align: center;
+            padding: 40px 20px;
             color: var(--accent);
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-bottom: 8px;
+            font-size: 1.1em;
         }
-        .analysis-content {
-            font-size: 0.9em;
-            color: var(--text-light);
-            line-height: 1.6;
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(6, 182, 212, 0.3);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
         }
-        .stat-bar {
-            background: rgba(52, 65, 85, 0.5);
-            border-radius: 4px;
-            height: 6px;
-            margin: 8px 0;
-            overflow: hidden;
-        }
-        .stat-fill {
-            background: linear-gradient(90deg, var(--accent), var(--accent-alt));
-            height: 100%;
-            border-radius: 4px;
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
         .footer {
             text-align: center;
@@ -247,27 +426,10 @@
         @media (max-width: 768px) {
             .header-container { flex-direction: column; }
             .standings-grid { grid-template-columns: 1fr; }
+            .lineup-container { grid-template-columns: 1fr; }
             .match-teams { grid-template-columns: 1fr; gap: 5px; }
             .nav-tabs { width: 100%; }
             .analysis-grid { grid-template-columns: 1fr; }
-        }
-        .prediction-box {
-            background: rgba(139, 92, 246, 0.1);
-            border: 1px solid var(--accent-alt);
-            border-radius: 8px;
-            padding: 12px;
-            margin: 10px 0;
-            text-align: center;
-        }
-        .prediction-score {
-            font-weight: 700;
-            color: var(--accent-alt);
-            font-size: 1.1em;
-        }
-        .prediction-odds {
-            font-size: 0.8em;
-            color: var(--text-muted);
-            margin-top: 4px;
         }
     </style>
 </head>
@@ -284,26 +446,63 @@
             <button class="nav-btn" onclick="showSection('bracket')">🏅 Bracket</button>
         </div>
     </div>
+    
     <div class="container">
         <!-- MATCHES SECTION -->
         <div id="matches" class="section active">
             <div class="matches-container" id="matches-grid"></div>
-            <div id="match-analysis" class="card" style="display: none;">
-                <h2 class="card-title" id="analysis-title"></h2>
-                <div style="margin-bottom: 20px;">
-                    <h3 style="color: var(--accent); font-size: 1em; margin-bottom: 10px;">📊 KEY STATISTICS</h3>
-                    <div id="stats-section"></div>
+            <div id="match-detail" class="card" style="display: none;">
+                <div class="tabs-content">
+                    <button class="tab-btn active" onclick="switchTab('overview')">📊 Overview</button>
+                    <button class="tab-btn" onclick="switchTab('lineups')">👥 Lineups</button>
+                    <button class="tab-btn" onclick="switchTab('stats')">📈 Stats</button>
+                    <button class="tab-btn" onclick="switchTab('analysis')">🔍 Analysis</button>
+                    <button class="tab-btn" onclick="switchTab('predictions')">🎯 Predictions</button>
+                    <button class="tab-btn" onclick="switchTab('social')">💬 Social</button>
                 </div>
-                <div style="margin-bottom: 20px;">
-                    <h3 style="color: var(--accent); font-size: 1em; margin-bottom: 10px;">🎯 PREDICTIONS</h3>
-                    <div id="predictions-section"></div>
+
+                <!-- Overview Tab -->
+                <div id="overview-tab" class="tab-panel active">
+                    <h2 class="card-title" id="match-title"></h2>
+                    <div id="overview-content"></div>
                 </div>
-                <div style="margin-bottom: 20px;">
-                    <h3 style="color: var(--accent); font-size: 1em; margin-bottom: 10px;">📈 DETAILED ANALYSIS (13-PART)</h3>
-                    <div id="analysis-section" class="analysis-grid"></div>
+
+                <!-- Lineups Tab -->
+                <div id="lineups-tab" class="tab-panel">
+                    <h3 style="color: var(--accent); margin-bottom: 15px;">⚽ Team Lineups</h3>
+                    <div id="lineups-content" class="lineup-container"></div>
+                </div>
+
+                <!-- Stats Tab -->
+                <div id="stats-tab" class="tab-panel">
+                    <h3 style="color: var(--accent); margin-bottom: 15px;">📊 Match Statistics</h3>
+                    <div id="stats-content"></div>
+                </div>
+
+                <!-- Analysis Tab -->
+                <div id="analysis-tab" class="tab-panel">
+                    <h3 style="color: var(--accent); margin-bottom: 15px;">🔍 Claude AI Analysis (13-Part)</h3>
+                    <div id="loading-analysis" class="loading">
+                        <div class="spinner"></div>
+                        <p style="margin-top: 10px;">Claude is analyzing this match...</p>
+                    </div>
+                    <div id="analysis-content"></div>
+                </div>
+
+                <!-- Predictions Tab -->
+                <div id="predictions-tab" class="tab-panel">
+                    <h3 style="color: var(--accent); margin-bottom: 15px;">🎯 Match Predictions & Odds</h3>
+                    <div id="predictions-content"></div>
+                </div>
+
+                <!-- Social Tab -->
+                <div id="social-tab" class="tab-panel">
+                    <h3 style="color: var(--accent); margin-bottom: 15px;">💬 Social Media Feed</h3>
+                    <div id="social-content" class="social-feed"></div>
                 </div>
             </div>
         </div>
+
         <!-- LEADERBOARD SECTION -->
         <div id="leaderboard" class="section">
             <div class="card">
@@ -319,24 +518,34 @@
                 <table class="leaderboard-table" id="cards-table"></table>
             </div>
         </div>
+
         <!-- STANDINGS SECTION -->
         <div id="standings" class="section">
             <div class="standings-grid" id="standings-grid"></div>
         </div>
+
         <!-- BRACKET SECTION -->
         <div id="bracket" class="section">
             <div class="bracket-container" id="bracket-grid"></div>
         </div>
+
         <!-- FOOTER -->
         <div class="footer">
             <p>⚽ World Cup 2026 Professional Analysis Platform</p>
-            <p>By Christopher Potter | Real-time predictions, stats & in-depth analysis</p>
-            <p>All times displayed in Estonian Time (UTC+3) | Last updated: <span id="last-updated">--:--:--</span></p>
+            <p>By Christopher Potter | Live Data + Claude AI Analysis</p>
+            <p>All times in Estonian Time (UTC+3) | Last updated: <span id="last-updated">--:--:--</span></p>
         </div>
     </div>
+
     <script>
-        let currentData = null;
-        
+        const FIREBASE_FUNCTION_URL = 'https://us-central1-YOUR_PROJECT_ID.cloudfunctions.net/analyzeMatch';
+        let currentMatch = null;
+        let allData = {
+            matches: [],
+            leaderboard: { scorers: [], assists: [], cards: [] },
+            standings: { groups: [] }
+        };
+
         function updateTime() {
             const estTime = new Date().toLocaleString('et-EE', {
                 timeZone: 'Europe/Tallinn',
@@ -349,28 +558,27 @@
         }
         updateTime();
         setInterval(updateTime, 1000);
-        
-        async function loadData() {
+
+        async function loadMatchData(matchId) {
             try {
+                // Try to fetch from static data first
                 const response = await fetch('data/current_data.json');
-                currentData = await response.json();
+                allData = await response.json();
                 renderMatches();
                 renderLeaderboard();
                 renderStandings();
                 renderBracket();
                 updateLastUpdated();
             } catch (e) {
-                console.error('Error loading data:', e);
-                document.querySelector('.container').innerHTML = '<p style="color: var(--danger); padding: 20px;">Error loading data. Please refresh the page.</p>';
+                console.log('Loading from cache or API...');
             }
         }
-        
+
         function renderMatches() {
-            if (!currentData || !currentData.matches) return;
             const grid = document.getElementById('matches-grid');
-            grid.innerHTML = currentData.matches.map((match, idx) => `
+            grid.innerHTML = allData.matches.map((match, idx) => `
                 <div class="match-card" onclick="selectMatch(${idx})">
-                    <div class="match-time">${match.time.split('T')[0]} ${match.status}</div>
+                    <div class="match-time">${new Date(match.time).toLocaleDateString('et-EE')} ${match.status}</div>
                     <div class="match-teams">
                         <div class="team-info">
                             <div class="team-flag">${match.team1.flag}</div>
@@ -387,71 +595,194 @@
                 </div>
             `).join('');
         }
-        
-        function selectMatch(idx) {
-            if (!currentData || !currentData.matches) return;
-            const match = currentData.matches[idx];
-            const section = document.getElementById('match-analysis');
-            const title = document.getElementById('analysis-title');
-            
-            title.textContent = `${match.team1.flag} ${match.team1.name} vs ${match.team2.name} ${match.team2.flag}`;
-            
+
+        async function selectMatch(idx) {
+            currentMatch = allData.matches[idx];
+            const detail = document.getElementById('match-detail');
+            const title = document.getElementById('match-title');
+
+            title.textContent = `${currentMatch.team1.flag} ${currentMatch.team1.name} vs ${currentMatch.team2.name} ${currentMatch.team2.flag}`;
+
+            // Overview
+            let overviewHtml = `
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-value">${currentMatch.score.team1}-${currentMatch.score.team2}</div>
+                        <div class="stat-label">Score</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">${currentMatch.stats.possession.team1}%</div>
+                        <div class="stat-label">${currentMatch.team1.name} Possession</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">${currentMatch.stats.possession.team2}%</div>
+                        <div class="stat-label">${currentMatch.team2.name} Possession</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">${currentMatch.stats.shots.team1} - ${currentMatch.stats.shots.team2}</div>
+                        <div class="stat-label">Shots on Target</div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('overview-content').innerHTML = overviewHtml;
+
+            // Lineups
+            let lineupsHtml = `
+                <div class="team-lineup">
+                    <div class="lineup-title">${currentMatch.team1.flag} ${currentMatch.team1.name} (${currentMatch.lineups?.team1?.formation || '4-3-3'})</div>
+                    <div class="player-list">
+                        ${(currentMatch.lineups?.team1?.players || []).map(p => `
+                            <div class="player-card">
+                                <div class="player-number">${p.number}</div>
+                                <div class="player-info">
+                                    <div class="player-name">${p.name}</div>
+                                    <div class="player-position">${p.position} • ${p.club}</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                <div class="team-lineup">
+                    <div class="lineup-title">${currentMatch.team2.flag} ${currentMatch.team2.name} (${currentMatch.lineups?.team2?.formation || '4-2-3-1'})</div>
+                    <div class="player-list">
+                        ${(currentMatch.lineups?.team2?.players || []).map(p => `
+                            <div class="player-card">
+                                <div class="player-number">${p.number}</div>
+                                <div class="player-info">
+                                    <div class="player-name">${p.name}</div>
+                                    <div class="player-position">${p.position} • ${p.club}</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            document.getElementById('lineups-content').innerHTML = lineupsHtml;
+
             // Stats
             let statsHtml = `
                 <div class="analysis-grid">
                     <div class="analysis-box">
-                        <div class="analysis-label">Possession Team 1</div>
-                        <div style="font-size: 1.5em; color: var(--accent); font-weight: 700;">${match.stats.possession.team1}%</div>
-                        <div class="stat-bar"><div class="stat-fill" style="width: ${match.stats.possession.team1}%"></div></div>
-                    </div>
-                    <div class="analysis-box">
-                        <div class="analysis-label">Possession Team 2</div>
-                        <div style="font-size: 1.5em; color: var(--accent); font-weight: 700;">${match.stats.possession.team2}%</div>
-                        <div class="stat-bar"><div class="stat-fill" style="width: ${match.stats.possession.team2}%"></div></div>
+                        <div class="analysis-label">Possession</div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
+                            <div>
+                                <div style="font-weight: 700; color: var(--accent);">${currentMatch.stats.possession.team1}%</div>
+                                <div class="stat-bar"><div class="stat-fill" style="width: ${currentMatch.stats.possession.team1}%"></div></div>
+                            </div>
+                            <div>
+                                <div style="font-weight: 700; color: var(--accent);">${currentMatch.stats.possession.team2}%</div>
+                                <div class="stat-bar"><div class="stat-fill" style="width: ${currentMatch.stats.possession.team2}%"></div></div>
+                            </div>
+                        </div>
                     </div>
                     <div class="analysis-box">
                         <div class="analysis-label">Shots on Target</div>
-                        <div style="font-size: 1.2em; color: var(--accent-alt); font-weight: 700;">${match.stats.shots.team1} - ${match.stats.shots.team2}</div>
+                        <div style="font-size: 1.5em; color: var(--accent-alt); font-weight: 700; text-align: center; margin-top: 10px;">
+                            ${currentMatch.stats.shotsOnTarget?.team1 || currentMatch.stats.shots.team1} - ${currentMatch.stats.shotsOnTarget?.team2 || currentMatch.stats.shots.team2}
+                        </div>
                     </div>
                     <div class="analysis-box">
                         <div class="analysis-label">Expected Goals (xG)</div>
-                        <div style="font-size: 1.2em; color: var(--accent-alt); font-weight: 700;">${match.stats.xG.team1} - ${match.stats.xG.team2}</div>
+                        <div style="font-size: 1.5em; color: var(--accent-alt); font-weight: 700; text-align: center; margin-top: 10px;">
+                            ${currentMatch.stats.xG.team1} - ${currentMatch.stats.xG.team2}
+                        </div>
+                    </div>
+                    <div class="analysis-box">
+                        <div class="analysis-label">Pass Accuracy</div>
+                        <div style="font-size: 1.2em; color: var(--accent); font-weight: 700; text-align: center; margin-top: 10px;">
+                            ${currentMatch.stats.passAccuracy?.team1 || '85'}% - ${currentMatch.stats.passAccuracy?.team2 || '82'}%
+                        </div>
                     </div>
                 </div>
             `;
-            document.getElementById('stats-section').innerHTML = statsHtml;
-            
+            document.getElementById('stats-content').innerHTML = statsHtml;
+
             // Predictions
-            let predsHtml = (match.predictions || []).map(p => `
+            let predsHtml = (currentMatch.predictions || []).map(p => `
                 <div class="prediction-box">
                     <div class="prediction-score">${p.score}</div>
                     <div class="prediction-odds">${p.prob} probability @ ${p.odds} odds</div>
                 </div>
             `).join('');
-            document.getElementById('predictions-section').innerHTML = predsHtml;
-            
-            // 13-Part Analysis
-            let analysisHtml = (match.analysis13part || []).map(item => `
-                <div class="analysis-box">
-                    <div class="analysis-label">${item.category}</div>
-                    <div class="analysis-content">${item.insight}</div>
+            document.getElementById('predictions-content').innerHTML = predsHtml;
+
+            // Claude AI Analysis (will be loaded from Firebase Function)
+            await loadClaudeAnalysis();
+
+            // Social Feed
+            let socialHtml = (currentMatch.social || []).map(post => `
+                <div class="social-post">
+                    <div class="social-header">
+                        <span class="social-author">${post.author}</span>
+                        <span class="social-timestamp">${post.timestamp}</span>
+                    </div>
+                    <div class="social-content">${post.content}</div>
                 </div>
             `).join('');
-            document.getElementById('analysis-section').innerHTML = analysisHtml;
-            
-            section.style.display = 'block';
-            section.scrollIntoView({ behavior: 'smooth' });
+            if (!socialHtml) {
+                socialHtml = '<p style="color: var(--text-muted);">Loading social media feed...</p>';
+            }
+            document.getElementById('social-content').innerHTML = socialHtml;
+
+            detail.style.display = 'block';
+            detail.scrollIntoView({ behavior: 'smooth' });
         }
-        
-        function renderLeaderboard() {
-            if (!currentData || !currentData.leaderboard) return;
+
+        async function loadClaudeAnalysis() {
+            const analysisDiv = document.getElementById('analysis-content');
             
+            if (currentMatch.analysis13part && currentMatch.analysis13part.length > 0) {
+                let analysisHtml = currentMatch.analysis13part.map(item => `
+                    <div class="analysis-box">
+                        <div class="analysis-label">${item.category}</div>
+                        <div class="analysis-content">${item.insight}</div>
+                    </div>
+                `).join('');
+                analysisDiv.innerHTML = analysisHtml;
+                document.getElementById('loading-analysis').style.display = 'none';
+            } else {
+                // Load from Firebase Function
+                try {
+                    const response = await fetch(FIREBASE_FUNCTION_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            matchId: currentMatch.id,
+                            team1: currentMatch.team1.name,
+                            team2: currentMatch.team2.name,
+                            stats: currentMatch.stats,
+                            score: currentMatch.score
+                        })
+                    });
+
+                    const data = await response.json();
+                    let analysisHtml = data.analysis.map(item => `
+                        <div class="analysis-box">
+                            <div class="analysis-label">${item.category}</div>
+                            <div class="analysis-content">${item.insight}</div>
+                        </div>
+                    `).join('');
+                    analysisDiv.innerHTML = analysisHtml;
+                    document.getElementById('loading-analysis').style.display = 'none';
+                } catch (e) {
+                    analysisDiv.innerHTML = '<p style="color: var(--text-muted);">Analysis unavailable. Check Firebase configuration.</p>';
+                    document.getElementById('loading-analysis').style.display = 'none';
+                }
+            }
+        }
+
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabName + '-tab').classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function renderLeaderboard() {
             const scorersHtml = `
-                <thead>
-                    <tr><th>Rank</th><th>Player</th><th>Team</th><th>Goals</th></tr>
-                </thead>
+                <thead><tr><th>Rank</th><th>Player</th><th>Team</th><th>Goals</th></tr></thead>
                 <tbody>
-                    ${currentData.leaderboard.scorers.map(s => `
+                    ${allData.leaderboard.scorers.map(s => `
                         <tr>
                             <td class="team-rank">${s.rank}</td>
                             <td>${s.player}</td>
@@ -462,13 +793,11 @@
                 </tbody>
             `;
             document.getElementById('scorers-table').innerHTML = scorersHtml;
-            
+
             const assistsHtml = `
-                <thead>
-                    <tr><th>Rank</th><th>Player</th><th>Team</th><th>Assists</th></tr>
-                </thead>
+                <thead><tr><th>Rank</th><th>Player</th><th>Team</th><th>Assists</th></tr></thead>
                 <tbody>
-                    ${currentData.leaderboard.assists.map(a => `
+                    ${allData.leaderboard.assists.map(a => `
                         <tr>
                             <td class="team-rank">${a.rank}</td>
                             <td>${a.player}</td>
@@ -479,13 +808,11 @@
                 </tbody>
             `;
             document.getElementById('assists-table').innerHTML = assistsHtml;
-            
+
             const cardsHtml = `
-                <thead>
-                    <tr><th>Rank</th><th>Player</th><th>Team</th><th>🟨</th><th>🔴</th></tr>
-                </thead>
+                <thead><tr><th>Rank</th><th>Player</th><th>Team</th><th>🟨</th><th>🔴</th></tr></thead>
                 <tbody>
-                    ${currentData.leaderboard.cards.map(c => `
+                    ${allData.leaderboard.cards.map(c => `
                         <tr>
                             <td class="team-rank">${c.rank}</td>
                             <td>${c.player}</td>
@@ -498,27 +825,18 @@
             `;
             document.getElementById('cards-table').innerHTML = cardsHtml;
         }
-        
+
         function renderStandings() {
-            if (!currentData || !currentData.standings) return;
             const grid = document.getElementById('standings-grid');
-            grid.innerHTML = (currentData.standings.groups || []).map(group => `
+            grid.innerHTML = allData.standings.groups.map(group => `
                 <div class="group-table">
                     <div class="group-name">${group.name}</div>
                     <table class="standings-table">
                         <thead>
-                            <tr>
-                                <th style="width: 30px;">#</th>
-                                <th>Team</th>
-                                <th style="text-align: center; width: 25px;">P</th>
-                                <th style="text-align: center; width: 25px;">W</th>
-                                <th style="text-align: center; width: 25px;">D</th>
-                                <th style="text-align: center; width: 25px;">L</th>
-                                <th style="text-align: center; width: 25px;">Pts</th>
-                            </tr>
+                            <tr><th>#</th><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>Pts</th></tr>
                         </thead>
                         <tbody>
-                            ${(group.teams || []).map((team, idx) => `
+                            ${group.teams.map((team, idx) => `
                                 <tr>
                                     <td class="team-rank">${idx + 1}</td>
                                     <td><strong>${team.name}</strong></td>
@@ -534,7 +852,7 @@
                 </div>
             `).join('');
         }
-        
+
         function renderBracket() {
             const bracket = document.getElementById('bracket-grid');
             bracket.innerHTML = `
@@ -556,22 +874,23 @@
                 </div>
             `;
         }
-        
+
         function showSection(sectionId) {
             document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(sectionId).classList.add('active');
             event.target.classList.add('active');
         }
-        
+
         function updateLastUpdated() {
-            const lastUpdate = currentData?.updated || new Date().toISOString();
+            const lastUpdate = allData.updated || new Date().toISOString();
             const date = new Date(lastUpdate).toLocaleString('et-EE', {timeZone: 'Europe/Tallinn'});
             document.getElementById('last-updated').textContent = date;
         }
-        
-        loadData();
-        setInterval(loadData, 300000);
+
+        // Load data on page load
+        loadMatchData();
+        setInterval(loadMatchData, 300000);
     </script>
 </body>
 </html>
