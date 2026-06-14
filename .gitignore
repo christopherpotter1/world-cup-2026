@@ -1,0 +1,11 @@
+/
+├── .github/workflows/daily-update.yml
+├── .gitignore
+├── index.html
+├── data/
+│   ├── current_data.json
+│   └── wc_2026_structure.json
+└── scripts/
+    ├── fetch_wc_data.py
+    ├── update_predictions.py
+    └── firebase_sync.py
