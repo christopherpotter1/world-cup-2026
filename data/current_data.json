@@ -1,0 +1,320 @@
+{
+  "updated": "2026-06-14T16:47:50Z",
+  "matches": [
+    {
+      "id": 1,
+      "time": "2026-06-12T18:00:00Z",
+      "status": "UPCOMING",
+      "venue": "MetLife Stadium",
+      "team1": {
+        "name": "USA",
+        "flag": "🇺🇸",
+        "group": "A"
+      },
+      "team2": {
+        "name": "Mexico",
+        "flag": "🇲🇽",
+        "group": "A"
+      },
+      "score": {
+        "team1": 0,
+        "team2": 0
+      },
+      "stats": {
+        "possession": {
+          "team1": 45,
+          "team2": 55
+        },
+        "shots": {
+          "team1": 8,
+          "team2": 12
+        },
+        "xG": {
+          "team1": 1.2,
+          "team2": 1.8
+        }
+      },
+      "predictions": [
+        {
+          "score": "2-1 USA",
+          "prob": "35%",
+          "odds": "3.20"
+        },
+        {
+          "score": "1-1 Draw",
+          "prob": "28%",
+          "odds": "3.75"
+        },
+        {
+          "score": "0-2 Mexico",
+          "prob": "18%",
+          "odds": "4.50"
+        }
+      ],
+      "analysis": {
+        "prediction": "USA expected to control midfield with their physical presence. Mexico's counter-attacking threat remains significant. Home advantage crucial factor."
+      }
+    },
+    {
+      "id": 2,
+      "time": "2026-06-12T21:00:00Z",
+      "status": "UPCOMING",
+      "venue": "Estadio Azteca",
+      "team1": {
+        "name": "Argentina",
+        "flag": "🇦🇷",
+        "group": "A"
+      },
+      "team2": {
+        "name": "Chile",
+        "flag": "🇨🇱",
+        "group": "A"
+      },
+      "score": {
+        "team1": 0,
+        "team2": 0
+      },
+      "stats": {
+        "possession": {
+          "team1": 58,
+          "team2": 42
+        },
+        "shots": {
+          "team1": 10,
+          "team2": 6
+        },
+        "xG": {
+          "team1": 1.5,
+          "team2": 0.9
+        }
+      },
+      "predictions": [
+        {
+          "score": "2-0 Argentina",
+          "prob": "42%",
+          "odds": "2.90"
+        },
+        {
+          "score": "1-0 Argentina",
+          "prob": "32%",
+          "odds": "3.40"
+        },
+        {
+          "score": "1-1 Draw",
+          "prob": "15%",
+          "odds": "4.20"
+        }
+      ],
+      "analysis": {
+        "prediction": "Argentina favored with experienced squad. Messi's presence elevates team dynamics. Chile's defense will need disciplined approach."
+      }
+    },
+    {
+      "id": 3,
+      "time": "2026-06-13T18:00:00Z",
+      "status": "UPCOMING",
+      "venue": "Levi's Stadium",
+      "team1": {
+        "name": "France",
+        "flag": "🇫🇷",
+        "group": "B"
+      },
+      "team2": {
+        "name": "Netherlands",
+        "flag": "🇳🇱",
+        "group": "B"
+      },
+      "score": {
+        "team1": 0,
+        "team2": 0
+      },
+      "stats": {
+        "possession": {
+          "team1": 52,
+          "team2": 48
+        },
+        "shots": {
+          "team1": 9,
+          "team2": 8
+        },
+        "xG": {
+          "team1": 1.4,
+          "team2": 1.3
+        }
+      },
+      "predictions": [
+        {
+          "score": "2-1 France",
+          "prob": "38%",
+          "odds": "3.10"
+        },
+        {
+          "score": "1-1 Draw",
+          "prob": "26%",
+          "odds": "3.80"
+        },
+        {
+          "score": "1-2 Netherlands",
+          "prob": "22%",
+          "odds": "3.95"
+        }
+      ],
+      "analysis": {
+        "prediction": "Classic European matchup. Both teams possess technical quality. Tactical discipline will determine outcome. Midfield battle crucial."
+      }
+    },
+    {
+      "id": 4,
+      "time": "2026-06-13T21:00:00Z",
+      "status": "UPCOMING",
+      "venue": "Mercedes-Benz Stadium",
+      "team1": {
+        "name": "Germany",
+        "flag": "🇩🇪",
+        "group": "B"
+      },
+      "team2": {
+        "name": "Italy",
+        "flag": "🇮🇹",
+        "group": "B"
+      },
+      "score": {
+        "team1": 0,
+        "team2": 0
+      },
+      "stats": {
+        "possession": {
+          "team1": 55,
+          "team2": 45
+        },
+        "shots": {
+          "team1": 11,
+          "team2": 7
+        },
+        "xG": {
+          "team1": 1.6,
+          "team2": 1.1
+        }
+      },
+      "predictions": [
+        {
+          "score": "2-0 Germany",
+          "prob": "40%",
+          "odds": "3.00"
+        },
+        {
+          "score": "1-0 Germany",
+          "prob": "30%",
+          "odds": "3.50"
+        },
+        {
+          "score": "1-1 Draw",
+          "prob": "18%",
+          "odds": "4.10"
+        }
+      ],
+      "analysis": {
+        "prediction": "Germany's organization and depth advantage. Italy's defensive solidity tested. Historical rivalry adds intensity. Expect competitive, tactical match."
+      }
+    }
+  ],
+  "leaderboard": {
+    "scorers": [
+      { "rank": 1, "player": "Kylian Mbappé", "team": "France", "goals": 0 },
+      { "rank": 2, "player": "Sergio Lewandowski", "team": "Poland", "goals": 0 },
+      { "rank": 3, "player": "Harry Kane", "team": "England", "goals": 0 },
+      { "rank": 4, "player": "Neymar Jr", "team": "Brazil", "goals": 0 },
+      { "rank": 5, "player": "Cristiano Ronaldo", "team": "Portugal", "goals": 0 }
+    ],
+    "assists": [
+      { "rank": 1, "player": "Lionel Messi", "team": "Argentina", "assists": 0 },
+      { "rank": 2, "player": "Antoine Griezmann", "team": "France", "assists": 0 },
+      { "rank": 3, "player": "Kevin De Bruyne", "team": "Belgium", "assists": 0 },
+      { "rank": 4, "player": "Angel Di Maria", "team": "Argentina", "assists": 0 },
+      { "rank": 5, "player": "Vinicius Jr", "team": "Brazil", "assists": 0 }
+    ],
+    "cards": [
+      { "rank": 1, "player": "Sergio Ramos", "team": "Spain", "yellow": 0, "red": 0 },
+      { "rank": 2, "player": "Pepe", "team": "Portugal", "yellow": 0, "red": 0 },
+      { "rank": 3, "player": "Gerard Piqué", "team": "Spain", "yellow": 0, "red": 0 },
+      { "rank": 4, "player": "Virgil van Dijk", "team": "Netherlands", "yellow": 0, "red": 0 },
+      { "rank": 5, "player": "Luke Shaw", "team": "England", "yellow": 0, "red": 0 }
+    ]
+  },
+  "standings": {
+    "groups": [
+      {
+        "name": "Group A",
+        "teams": [
+          { "name": "Argentina", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "USA", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Mexico", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Chile", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 }
+        ]
+      },
+      {
+        "name": "Group B",
+        "teams": [
+          { "name": "France", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Germany", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Netherlands", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Italy", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 }
+        ]
+      },
+      {
+        "name": "Group C",
+        "teams": [
+          { "name": "Brazil", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Spain", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Portugal", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Uruguay", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 }
+        ]
+      },
+      {
+        "name": "Group D",
+        "teams": [
+          { "name": "England", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Belgium", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Croatia", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Serbia", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 }
+        ]
+      },
+      {
+        "name": "Group E",
+        "teams": [
+          { "name": "Poland", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Denmark", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Czech Republic", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Tunisia", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 }
+        ]
+      },
+      {
+        "name": "Group F",
+        "teams": [
+          { "name": "Canada", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Morocco", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Senegal", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "South Korea", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 }
+        ]
+      },
+      {
+        "name": "Group G",
+        "teams": [
+          { "name": "Switzerland", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Austria", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Sweden", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Greece", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 }
+        ]
+      },
+      {
+        "name": "Group H",
+        "teams": [
+          { "name": "Japan", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Australia", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "Saudi Arabia", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 },
+          { "name": "New Zealand", "played": 0, "wins": 0, "draws": 0, "losses": 0, "points": 0 }
+        ]
+      }
+    ]
+  }
+}
