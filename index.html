@@ -200,40 +200,42 @@
             color: var(--accent);
             margin-bottom: 12px;
         }
-        .bracket-match {
-            background: rgba(6, 182, 212, 0.05);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 10px;
-            margin-bottom: 10px;
-            font-size: 0.85em;
-        }
-        .analysis-section {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        .analysis-text {
-            color: var(--text-muted);
-            line-height: 1.8;
-        }
-        .stats-grid {
+        .analysis-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 12px;
-            margin-top: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
         }
-        .stat-box {
+        .analysis-box {
             background: rgba(6, 182, 212, 0.05);
             border: 1px solid var(--border);
             border-radius: 8px;
-            padding: 12px;
-            text-align: center;
+            padding: 15px;
         }
-        .stat-value { font-size: 1.3em; font-weight: 700; color: var(--accent); }
-        .stat-label { font-size: 0.75em; color: var(--text-muted); margin-top: 4px; }
+        .analysis-label {
+            font-size: 0.8em;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .analysis-content {
+            font-size: 0.9em;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        .stat-bar {
+            background: rgba(52, 65, 85, 0.5);
+            border-radius: 4px;
+            height: 6px;
+            margin: 8px 0;
+            overflow: hidden;
+        }
+        .stat-fill {
+            background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+            height: 100%;
+            border-radius: 4px;
+        }
         .footer {
             text-align: center;
             padding: 30px 20px;
@@ -247,16 +249,25 @@
             .standings-grid { grid-template-columns: 1fr; }
             .match-teams { grid-template-columns: 1fr; gap: 5px; }
             .nav-tabs { width: 100%; }
+            .analysis-grid { grid-template-columns: 1fr; }
         }
-        .badge {
-            display: inline-block;
-            padding: 4px 10px;
-            background: rgba(6, 182, 212, 0.2);
-            border: 1px solid var(--accent);
-            border-radius: 4px;
-            font-size: 0.75em;
-            color: var(--accent);
-            font-weight: 600;
+        .prediction-box {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid var(--accent-alt);
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+            text-align: center;
+        }
+        .prediction-score {
+            font-weight: 700;
+            color: var(--accent-alt);
+            font-size: 1.1em;
+        }
+        .prediction-odds {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            margin-top: 4px;
         }
     </style>
 </head>
@@ -279,7 +290,18 @@
             <div class="matches-container" id="matches-grid"></div>
             <div id="match-analysis" class="card" style="display: none;">
                 <h2 class="card-title" id="analysis-title"></h2>
-                <div id="analysis-content"></div>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: var(--accent); font-size: 1em; margin-bottom: 10px;">📊 KEY STATISTICS</h3>
+                    <div id="stats-section"></div>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: var(--accent); font-size: 1em; margin-bottom: 10px;">🎯 PREDICTIONS</h3>
+                    <div id="predictions-section"></div>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: var(--accent); font-size: 1em; margin-bottom: 10px;">📈 DETAILED ANALYSIS (13-PART)</h3>
+                    <div id="analysis-section" class="analysis-grid"></div>
+                </div>
             </div>
         </div>
         <!-- LEADERBOARD SECTION -->
@@ -308,13 +330,13 @@
         <!-- FOOTER -->
         <div class="footer">
             <p>⚽ World Cup 2026 Professional Analysis Platform</p>
-            <p>By Christopher Potter | Real-time predictions, stats & analysis</p>
+            <p>By Christopher Potter | Real-time predictions, stats & in-depth analysis</p>
             <p>All times displayed in Estonian Time (UTC+3) | Last updated: <span id="last-updated">--:--:--</span></p>
         </div>
     </div>
     <script>
         let currentData = null;
-        // UPDATE ESTONIAN TIME
+        
         function updateTime() {
             const estTime = new Date().toLocaleString('et-EE', {
                 timeZone: 'Europe/Tallinn',
@@ -327,7 +349,7 @@
         }
         updateTime();
         setInterval(updateTime, 1000);
-        // LOAD DATA
+        
         async function loadData() {
             try {
                 const response = await fetch('data/current_data.json');
@@ -342,7 +364,7 @@
                 document.querySelector('.container').innerHTML = '<p style="color: var(--danger); padding: 20px;">Error loading data. Please refresh the page.</p>';
             }
         }
-        // RENDER MATCHES
+        
         function renderMatches() {
             if (!currentData || !currentData.matches) return;
             const grid = document.getElementById('matches-grid');
@@ -365,53 +387,65 @@
                 </div>
             `).join('');
         }
+        
         function selectMatch(idx) {
             if (!currentData || !currentData.matches) return;
             const match = currentData.matches[idx];
             const section = document.getElementById('match-analysis');
             const title = document.getElementById('analysis-title');
-            const content = document.getElementById('analysis-content');
+            
             title.textContent = `${match.team1.flag} ${match.team1.name} vs ${match.team2.name} ${match.team2.flag}`;
             
-            let html = `
-                <div class="stats-grid">
-                    <div class="stat-box">
-                        <div class="stat-value">${match.stats.possession.team1 || match.stats.possession[Object.keys(match.stats.possession)[0]]}%</div>
-                        <div class="stat-label">Possession</div>
+            // Stats
+            let statsHtml = `
+                <div class="analysis-grid">
+                    <div class="analysis-box">
+                        <div class="analysis-label">Possession Team 1</div>
+                        <div style="font-size: 1.5em; color: var(--accent); font-weight: 700;">${match.stats.possession.team1}%</div>
+                        <div class="stat-bar"><div class="stat-fill" style="width: ${match.stats.possession.team1}%"></div></div>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-value">${match.stats.shots.team1 || match.stats.shots[Object.keys(match.stats.shots)[0]]}</div>
-                        <div class="stat-label">Shots</div>
+                    <div class="analysis-box">
+                        <div class="analysis-label">Possession Team 2</div>
+                        <div style="font-size: 1.5em; color: var(--accent); font-weight: 700;">${match.stats.possession.team2}%</div>
+                        <div class="stat-bar"><div class="stat-fill" style="width: ${match.stats.possession.team2}%"></div></div>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-value">${match.stats.xG.team1 || match.stats.xG[Object.keys(match.stats.xG)[0]]}</div>
-                        <div class="stat-label">xG</div>
+                    <div class="analysis-box">
+                        <div class="analysis-label">Shots on Target</div>
+                        <div style="font-size: 1.2em; color: var(--accent-alt); font-weight: 700;">${match.stats.shots.team1} - ${match.stats.shots.team2}</div>
                     </div>
-                </div>
-                <div class="analysis-section" style="margin-top: 20px;">
-                    <h4 style="color: var(--accent); margin-bottom: 10px;">Predictions</h4>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px;">
-                        ${(match.predictions || []).map(p => `
-                            <div style="background: rgba(6, 182, 212, 0.1); padding: 10px; border-radius: 6px; text-align: center;">
-                                <div style="font-weight: 600; color: var(--accent);">${p.score}</div>
-                                <div style="font-size: 0.8em; color: var(--text-muted);">${p.prob} @ ${p.odds}</div>
-                            </div>
-                        `).join('')}
+                    <div class="analysis-box">
+                        <div class="analysis-label">Expected Goals (xG)</div>
+                        <div style="font-size: 1.2em; color: var(--accent-alt); font-weight: 700;">${match.stats.xG.team1} - ${match.stats.xG.team2}</div>
                     </div>
-                </div>
-                <div class="analysis-section" style="margin-top: 20px;">
-                    <h4 style="color: var(--accent); margin-bottom: 10px;">Analysis</h4>
-                    <p class="analysis-text">${match.analysis.prediction || 'No analysis available'}</p>
                 </div>
             `;
-            content.innerHTML = html;
+            document.getElementById('stats-section').innerHTML = statsHtml;
+            
+            // Predictions
+            let predsHtml = (match.predictions || []).map(p => `
+                <div class="prediction-box">
+                    <div class="prediction-score">${p.score}</div>
+                    <div class="prediction-odds">${p.prob} probability @ ${p.odds} odds</div>
+                </div>
+            `).join('');
+            document.getElementById('predictions-section').innerHTML = predsHtml;
+            
+            // 13-Part Analysis
+            let analysisHtml = (match.analysis13part || []).map(item => `
+                <div class="analysis-box">
+                    <div class="analysis-label">${item.category}</div>
+                    <div class="analysis-content">${item.insight}</div>
+                </div>
+            `).join('');
+            document.getElementById('analysis-section').innerHTML = analysisHtml;
+            
             section.style.display = 'block';
             section.scrollIntoView({ behavior: 'smooth' });
         }
-        // RENDER LEADERBOARD
+        
         function renderLeaderboard() {
             if (!currentData || !currentData.leaderboard) return;
-            // Scorers
+            
             const scorersHtml = `
                 <thead>
                     <tr><th>Rank</th><th>Player</th><th>Team</th><th>Goals</th></tr>
@@ -428,7 +462,7 @@
                 </tbody>
             `;
             document.getElementById('scorers-table').innerHTML = scorersHtml;
-            // Assists
+            
             const assistsHtml = `
                 <thead>
                     <tr><th>Rank</th><th>Player</th><th>Team</th><th>Assists</th></tr>
@@ -445,7 +479,7 @@
                 </tbody>
             `;
             document.getElementById('assists-table').innerHTML = assistsHtml;
-            // Cards
+            
             const cardsHtml = `
                 <thead>
                     <tr><th>Rank</th><th>Player</th><th>Team</th><th>🟨</th><th>🔴</th></tr>
@@ -464,7 +498,7 @@
             `;
             document.getElementById('cards-table').innerHTML = cardsHtml;
         }
-        // RENDER STANDINGS
+        
         function renderStandings() {
             if (!currentData || !currentData.standings) return;
             const grid = document.getElementById('standings-grid');
@@ -500,55 +534,44 @@
                 </div>
             `).join('');
         }
-        // RENDER BRACKET
+        
         function renderBracket() {
             const bracket = document.getElementById('bracket-grid');
             bracket.innerHTML = `
                 <div class="bracket-round">
                     <div class="bracket-round-title">Round of 16</div>
-                    <p style="color: var(--text-muted); font-size: 0.9em;">Tournament begins June 29, 2026</p>
-                    <div style="margin-top: 10px; color: var(--text-muted); font-size: 0.85em;">
-                        8 matches advancing winners to quarterfinals
-                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9em;">June 29 - July 2, 2026</p>
                 </div>
                 <div class="bracket-round">
                     <div class="bracket-round-title">Quarterfinals</div>
-                    <p style="color: var(--text-muted); font-size: 0.9em;">July 7-8, 2026</p>
-                    <div style="margin-top: 10px; color: var(--text-muted); font-size: 0.85em;">
-                        4 matches to determine semifinalists
-                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9em;">July 3-6, 2026</p>
                 </div>
                 <div class="bracket-round">
                     <div class="bracket-round-title">Semifinals</div>
-                    <p style="color: var(--text-muted); font-size: 0.9em;">July 9-10, 2026</p>
-                    <div style="margin-top: 10px; color: var(--text-muted); font-size: 0.85em;">
-                        2 matches to find finalists
-                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9em;">July 7-10, 2026</p>
                 </div>
                 <div class="bracket-round">
                     <div class="bracket-round-title">Final</div>
-                    <p style="color: var(--text-muted); font-size: 0.9em;">July 12, 2026</p>
-                    <div style="margin-top: 10px; color: var(--text-muted); font-size: 0.85em;">
-                        MetLife Stadium, New Jersey
-                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9em;">July 12, 2026 @ MetLife Stadium</p>
                 </div>
             `;
         }
-        // NAVIGATION
+        
         function showSection(sectionId) {
             document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(sectionId).classList.add('active');
             event.target.classList.add('active');
         }
+        
         function updateLastUpdated() {
             const lastUpdate = currentData?.updated || new Date().toISOString();
             const date = new Date(lastUpdate).toLocaleString('et-EE', {timeZone: 'Europe/Tallinn'});
             document.getElementById('last-updated').textContent = date;
         }
-        // INIT
+        
         loadData();
-        setInterval(loadData, 300000); // Refresh every 5 minutes
+        setInterval(loadData, 300000);
     </script>
 </body>
 </html>
