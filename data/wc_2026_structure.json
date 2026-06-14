@@ -1,0 +1,386 @@
+{
+  "tournament": {
+    "name": "FIFA World Cup 2026",
+    "startDate": "2026-06-12",
+    "endDate": "2026-07-12",
+    "hosts": ["USA", "Canada", "Mexico"],
+    "totalTeams": 32,
+    "totalMatches": 64
+  },
+  "stadiums": [
+    {
+      "id": 1,
+      "name": "MetLife Stadium",
+      "city": "East Rutherford, New Jersey",
+      "country": "USA",
+      "capacity": 82500
+    },
+    {
+      "id": 2,
+      "name": "SoFi Stadium",
+      "city": "Inglewood, California",
+      "country": "USA",
+      "capacity": 70240
+    },
+    {
+      "id": 3,
+      "name": "Levi's Stadium",
+      "city": "Santa Clara, California",
+      "country": "USA",
+      "capacity": 68500
+    },
+    {
+      "id": 4,
+      "name": "Mercedes-Benz Stadium",
+      "city": "Atlanta, Georgia",
+      "country": "USA",
+      "capacity": 71000
+    },
+    {
+      "id": 5,
+      "name": "Estadio Azteca",
+      "city": "Mexico City",
+      "country": "Mexico",
+      "capacity": 87506
+    },
+    {
+      "id": 6,
+      "name": "Estadio BBVA",
+      "city": "Monterrey",
+      "country": "Mexico",
+      "capacity": 53304
+    },
+    {
+      "id": 7,
+      "name": "BC Place",
+      "city": "Vancouver",
+      "country": "Canada",
+      "capacity": 54500
+    },
+    {
+      "id": 8,
+      "name": "BMO Field",
+      "city": "Toronto",
+      "country": "Canada",
+      "capacity": 45371
+    }
+  ],
+  "groups": [
+    {
+      "name": "Group A",
+      "teams": ["Argentina", "USA", "Mexico", "Chile"]
+    },
+    {
+      "name": "Group B",
+      "teams": ["France", "Germany", "Netherlands", "Italy"]
+    },
+    {
+      "name": "Group C",
+      "teams": ["Brazil", "Spain", "Portugal", "Uruguay"]
+    },
+    {
+      "name": "Group D",
+      "teams": ["England", "Belgium", "Croatia", "Serbia"]
+    },
+    {
+      "name": "Group E",
+      "teams": ["Poland", "Denmark", "Czech Republic", "Tunisia"]
+    },
+    {
+      "name": "Group F",
+      "teams": ["Canada", "Morocco", "Senegal", "South Korea"]
+    },
+    {
+      "name": "Group G",
+      "teams": ["Switzerland", "Austria", "Sweden", "Greece"]
+    },
+    {
+      "name": "Group H",
+      "teams": ["Japan", "Australia", "Saudi Arabia", "New Zealand"]
+    }
+  ],
+  "knockoutStructure": {
+    "roundOf16": {
+      "startDate": "2026-06-29",
+      "endDate": "2026-07-02",
+      "matches": 8
+    },
+    "quarterfinals": {
+      "startDate": "2026-07-03",
+      "endDate": "2026-07-06",
+      "matches": 4
+    },
+    "semifinals": {
+      "startDate": "2026-07-07",
+      "endDate": "2026-07-10",
+      "matches": 2
+    },
+    "thirdPlacePlayoff": {
+      "date": "2026-07-11",
+      "matches": 1
+    },
+    "final": {
+      "date": "2026-07-12",
+      "venue": "MetLife Stadium",
+      "matches": 1
+    }
+  },
+  "teams": [
+    {
+      "id": 1,
+      "name": "Argentina",
+      "flag": "🇦🇷",
+      "group": "A",
+      "fifaRanking": 1,
+      "coach": "Lionel Scaloni"
+    },
+    {
+      "id": 2,
+      "name": "USA",
+      "flag": "🇺🇸",
+      "group": "A",
+      "fifaRanking": 16,
+      "coach": "Gregg Berhalter"
+    },
+    {
+      "id": 3,
+      "name": "Mexico",
+      "flag": "🇲🇽",
+      "group": "A",
+      "fifaRanking": 13,
+      "coach": "Jaime Lozano"
+    },
+    {
+      "id": 4,
+      "name": "Chile",
+      "flag": "🇨🇱",
+      "group": "A",
+      "fifaRanking": 27,
+      "coach": "Ricardo Gareca"
+    },
+    {
+      "id": 5,
+      "name": "France",
+      "flag": "🇫🇷",
+      "group": "B",
+      "fifaRanking": 4,
+      "coach": "Didier Deschamps"
+    },
+    {
+      "id": 6,
+      "name": "Germany",
+      "flag": "🇩🇪",
+      "group": "B",
+      "fifaRanking": 11,
+      "coach": "Julian Nagelsmann"
+    },
+    {
+      "id": 7,
+      "name": "Netherlands",
+      "flag": "🇳🇱",
+      "group": "B",
+      "fifaRanking": 8,
+      "coach": "Ronald Koeman"
+    },
+    {
+      "id": 8,
+      "name": "Italy",
+      "flag": "🇮🇹",
+      "group": "B",
+      "fifaRanking": 17,
+      "coach": "Luciano Spalletti"
+    },
+    {
+      "id": 9,
+      "name": "Brazil",
+      "flag": "🇧🇷",
+      "group": "C",
+      "fifaRanking": 2,
+      "coach": "Carlo Ancelotti"
+    },
+    {
+      "id": 10,
+      "name": "Spain",
+      "flag": "🇪🇸",
+      "group": "C",
+      "fifaRanking": 7,
+      "coach": "Luis de la Fuente"
+    },
+    {
+      "id": 11,
+      "name": "Portugal",
+      "flag": "🇵🇹",
+      "group": "C",
+      "fifaRanking": 9,
+      "coach": "Roberto Martínez"
+    },
+    {
+      "id": 12,
+      "name": "Uruguay",
+      "flag": "🇺🇾",
+      "group": "C",
+      "fifaRanking": 14,
+      "coach": "Marcelo Bielsa"
+    },
+    {
+      "id": 13,
+      "name": "England",
+      "flag": "🇬🇧",
+      "group": "D",
+      "fifaRanking": 5,
+      "coach": "Gareth Southgate"
+    },
+    {
+      "id": 14,
+      "name": "Belgium",
+      "flag": "🇧🇪",
+      "group": "D",
+      "fifaRanking": 18,
+      "coach": "Domenico Tedesco"
+    },
+    {
+      "id": 15,
+      "name": "Croatia",
+      "flag": "🇭🇷",
+      "group": "D",
+      "fifaRanking": 15,
+      "coach": "Zlatko Dalić"
+    },
+    {
+      "id": 16,
+      "name": "Serbia",
+      "flag": "🇷🇸",
+      "group": "D",
+      "fifaRanking": 21,
+      "coach": "Dragan Stojković"
+    },
+    {
+      "id": 17,
+      "name": "Poland",
+      "flag": "🇵🇱",
+      "group": "E",
+      "fifaRanking": 26,
+      "coach": "Michael Probierz"
+    },
+    {
+      "id": 18,
+      "name": "Denmark",
+      "flag": "🇩🇰",
+      "group": "E",
+      "fifaRanking": 10,
+      "coach": "Kasper Hjulmand"
+    },
+    {
+      "id": 19,
+      "name": "Czech Republic",
+      "flag": "🇨🇿",
+      "group": "E",
+      "fifaRanking": 31,
+      "coach": "Ivan Hašek"
+    },
+    {
+      "id": 20,
+      "name": "Tunisia",
+      "flag": "🇹🇳",
+      "group": "E",
+      "fifaRanking": 30,
+      "coach": "Jalel Kadri"
+    },
+    {
+      "id": 21,
+      "name": "Canada",
+      "flag": "🇨🇦",
+      "group": "F",
+      "fifaRanking": 41,
+      "coach": "Jesse Marsch"
+    },
+    {
+      "id": 22,
+      "name": "Morocco",
+      "flag": "🇲🇦",
+      "group": "F",
+      "fifaRanking": 11,
+      "coach": "Walid Regragui"
+    },
+    {
+      "id": 23,
+      "name": "Senegal",
+      "flag": "🇸🇳",
+      "group": "F",
+      "fifaRanking": 18,
+      "coach": "Aliou Cissé"
+    },
+    {
+      "id": 24,
+      "name": "South Korea",
+      "flag": "🇰🇷",
+      "group": "F",
+      "fifaRanking": 19,
+      "coach": "Hong Myung-bo"
+    },
+    {
+      "id": 25,
+      "name": "Switzerland",
+      "flag": "🇨🇭",
+      "group": "G",
+      "fifaRanking": 19,
+      "coach": "Murat Yakin"
+    },
+    {
+      "id": 26,
+      "name": "Austria",
+      "flag": "🇦🇹",
+      "group": "G",
+      "fifaRanking": 23,
+      "coach": "Ralf Rangnick"
+    },
+    {
+      "id": 27,
+      "name": "Sweden",
+      "flag": "🇸🇪",
+      "group": "G",
+      "fifaRanking": 25,
+      "coach": "Jon Dahl Tomasson"
+    },
+    {
+      "id": 28,
+      "name": "Greece",
+      "flag": "🇬🇷",
+      "group": "G",
+      "fifaRanking": 50,
+      "coach": "Gernot Rohr"
+    },
+    {
+      "id": 29,
+      "name": "Japan",
+      "flag": "🇯🇵",
+      "group": "H",
+      "fifaRanking": 24,
+      "coach": "Hajime Moriyasu"
+    },
+    {
+      "id": 30,
+      "name": "Australia",
+      "flag": "🇦🇺",
+      "group": "H",
+      "fifaRanking": 38,
+      "coach": "Graham Arnold"
+    },
+    {
+      "id": 31,
+      "name": "Saudi Arabia",
+      "flag": "🇸🇦",
+      "group": "H",
+      "fifaRanking": 51,
+      "coach": "Juan Antonio Pizzi"
+    },
+    {
+      "id": 32,
+      "name": "New Zealand",
+      "flag": "🇳🇿",
+      "group": "H",
+      "fifaRanking": 48,
+      "coach": "Ricki Herbert"
+    }
+  ]
+}
